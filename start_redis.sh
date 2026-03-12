@@ -6,3 +6,12 @@ cd "$SCRIPT_DIR"
 
 echo "Starting Redis (foreground)..."
 cd redis && docker-compose -f docker-compose.yaml up
+
+
+#on windows poweshell
+#wsl -d Ubuntu
+
+#I****1508
+#redis-cli ping
+#sudo service redis-server stop
+#sudo service redis-server start

@@ -30,3 +30,6 @@ fi
 
 echo "Celery command not found. Activate your virtual environment or install dependencies."
 exit 1
+
+#on terminal
+#poetry run celery -A src.services.celery:celery_app worker --loglevel=info --pool=threads

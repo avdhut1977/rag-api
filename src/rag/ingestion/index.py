@@ -158,6 +158,7 @@ def download_content_and_partition(document_id: str, document: dict):
 
             # Download the file to a temporary directory - for all OS - Linux , Windows , Mac
             temp_file_path = f"c:/Users/avdhu/{document_id}.{file_type}"
+            #temp_file_path = f"/tmp/{document_id}.{file_type}"
             s3_client.download_file(appConfig["s3_bucket_name"], s3_key, temp_file_path)
 
             elements = partition_document(temp_file_path, file_type)
@@ -168,6 +169,7 @@ def download_content_and_partition(document_id: str, document: dict):
             # Crawl the URL
             response = scrapingbee_client.get(url)
             temp_file_path = f"c:/Users/avdhu/{document_id}.html"
+            #temp_file_path = f"/tmp/{document_id}.html"
             with open(temp_file_path, "wb") as f:
                 f.write(response.content)
 
